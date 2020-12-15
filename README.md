@@ -23,3 +23,38 @@ Ubuntu 20.04:
 Deploy a full node:
 
     $ ./deploy.sh
+## 3. Re-deploy
+### 3.1 From script  
+
+    $ git reset --hard
+    $ ./deploy.sh
+    
+### 3.2 From manual
+
+    $ cd ton-node
+    $ docker-compose up -d
+    $ cd ..
+
+    $ cd kafka/
+    $ docker-compose up -d
+    $ cd ..
+
+    $ cd q-server/
+    $ docker-compose up -d
+    $ cd .. 
+
+    $ cd arangodb/
+    $ docker-compose up -d
+    $ cd ..
+
+    $ cd proxy/
+    $ docker-compose up -d
+    $ cd ..
+
+    $ cd statsd/
+    $ docker-compose up -d
+    $ cd ..
+
+    $ cd web.root/
+    $ docker-compose up -d
+    $ cd ..
